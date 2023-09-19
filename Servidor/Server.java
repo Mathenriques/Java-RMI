@@ -7,9 +7,9 @@ import java.rmi.registry.Registry;
 public class Server {
   public static void main(String[] args) {
     try {
-      Registry registry = LocateRegistry.createRegistry(1079);
+      // Registry registry = LocateRegistry.createRegistry(1079);
 
-      Naming.rebind("rmi://localhost:1079/Bhaskara", new Bhaskara());
+      Naming.rebind("rmi://localhost:1079/bhaskara", new Bhaskara());
 
       System.out.println("Servidor Online!");
       

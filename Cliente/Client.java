@@ -18,7 +18,7 @@ public class Client {
     int c = keyboard.nextInt();
 
     try {
-      IBhaskara stub = (IBhaskara) Naming.lookup("rmi://localhost:1079/Bhaskara");
+      IBhaskara stub = (IBhaskara) Naming.lookup("rmi://localhost:1079/bhaskara");
       String result = stub.calcBhaskara(a, b, c);
       System.out.println(result);
       
