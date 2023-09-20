@@ -1,7 +1,6 @@
 import java.rmi.RemoteException;
-import java.rmi.server.UnicastRemoteObject;
 
-public class Bhaskara extends UnicastRemoteObject implements IBhaskara {
+public class Bhaskara implements IBhaskara {
 
   protected Bhaskara() throws RemoteException {
     super();

@@ -1,19 +1,23 @@
-import java.net.MalformedURLException;
-import java.rmi.Naming;
-import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.rmi.server.UnicastRemoteObject;
 
 public class Server {
   public static void main(String[] args) {
     try {
-      Registry registry = LocateRegistry.createRegistry(1079);
+      System.setProperty("java.rmi.server.hostname","127.0.0.1");
 
-      Naming.rebind("rmi://localhost:1079/bhaskara", new Bhaskara());
+      Bhaskara bhask = new Bhaskara();
+      
+      IBhaskara stub = (IBhaskara) UnicastRemoteObject.exportObject(bhask, 0);
+      
+      Registry registry = LocateRegistry.createRegistry(10833);
+
+      registry.rebind("Bhaskara", stub);
 
       System.out.println("Servidor Online!");
       
-    } catch (RemoteException | MalformedURLException e) {
+    } catch (Exception e) {
       e.printStackTrace();
     }
 
