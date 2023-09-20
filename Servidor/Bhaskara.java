@@ -14,10 +14,7 @@ public class Bhaskara extends UnicastRemoteObject implements IBhaskara {
     double valor1 = (-b + raizDelta)/(2*a);
     double valor2 = (-b - raizDelta)/(2*a);
 
-    System.out.println("a = " + a + " b = " + b + " c = " + c);
-    System.out.println("Os valores de bhaskara são: valor1 = " + valor1 + ", valor2 = " + valor2 + " .");
-
-    return "Os valores de bhaskara são: valor1 = " + valor1 + ", valor2 = " + valor2 + " .";
+    return "Os valores de bhaskara sao: valor1 = " + valor1 + ", valor2 = " + valor2 + " .";
   }
 
   private Double calcRaizDelta(int a, int b, int c) {
