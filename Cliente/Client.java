@@ -13,11 +13,11 @@ public class Client {
     Scanner keyboard = new Scanner(System.in);
 
     System.out.println("Digite o primeiro valor: ");
-    int a = keyboard.nextInt();
+    Double a = keyboard.nextDouble();
     System.out.println("Digite o segundo valor: ");
-    int b = keyboard.nextInt();
+    Double b = keyboard.nextDouble();
     System.out.println("Digite o terceiro valor: ");
-    int c = keyboard.nextInt();
+    Double c = keyboard.nextDouble();
 
     try {
       Registry registry = LocateRegistry.getRegistry("127.0.0.1", 10833);

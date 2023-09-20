@@ -6,18 +6,24 @@ public class Bhaskara implements IBhaskara {
     super();
   }
 
-  public String calcBhaskara(int a, int b, int c) throws RemoteException {
+  public String calcBhaskara(double a, double b, double c) throws RemoteException {
 
     double raizDelta = calcRaizDelta(a, b, c);
 
-    double valor1 = (-b + raizDelta)/(2*a);
-    double valor2 = (-b - raizDelta)/(2*a);
+    if (Double.isNaN(raizDelta)) {
+      return "Delta negativo, informe outros números";
+    }
+
+    double valor1 = ((-(b) + raizDelta)/(2*a));
+    double valor2 = ((-(b) - raizDelta)/(2*a));
 
     return "Os valores de bhaskara sao: valor1 = " + valor1 + ", valor2 = " + valor2 + " .";
   }
 
-  private Double calcRaizDelta(int a, int b, int c) {
-    Double raizDelta = Math.sqrt((b*b) - 4*a*c);
+  private Double calcRaizDelta(double a, double b, double c) {
+    Double delta = (b*b) + (-4*(a*c));
+
+    Double raizDelta = Math.sqrt(delta);
 
     return raizDelta;
   }
